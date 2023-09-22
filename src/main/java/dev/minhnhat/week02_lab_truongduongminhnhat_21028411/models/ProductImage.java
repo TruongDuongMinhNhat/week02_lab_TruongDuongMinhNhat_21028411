@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 public class ProductImage {
     @Id
     @ManyToOne
-    @Column(name = "product_id")
+    @JoinColumn(name = "product_id")
     private Product productID;
     @Id
     @Column(name = "image_id")

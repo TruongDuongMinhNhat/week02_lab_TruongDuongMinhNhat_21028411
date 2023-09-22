@@ -9,7 +9,7 @@ import java.sql.Date;
 public class ProductPrice {
     @Id
     @ManyToOne
-    @Column(name = "product_id")
+    @JoinColumn(name = "product_id")
     private Product productID;
     @Id
     @Column(name = "product_date_time")
@@ -17,6 +17,9 @@ public class ProductPrice {
     private double price;
     @Column(length = 200)
     private String note;
+
+    public ProductPrice() {
+    }
 
     public ProductPrice(Product productID, Date productDateTime, double price, String note) {
         this.productID = productID;
