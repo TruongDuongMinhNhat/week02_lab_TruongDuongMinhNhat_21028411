@@ -1,4 +1,4 @@
-package dev.minhnhat.week02_lab_truongduongminhnhat_21028411.repositories;
+package dev.minhnhat.week02_lab_truongduongminhnhat_21028411.backend.repositories;
 
 import java.util.List;
 import java.util.Optional;

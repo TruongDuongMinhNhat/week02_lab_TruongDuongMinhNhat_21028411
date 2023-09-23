@@ -1,9 +1,13 @@
-package dev.minhnhat.week02_lab_truongduongminhnhat_21028411.models;
+package dev.minhnhat.week02_lab_truongduongminhnhat_21028411.backend.models;
 
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "customer")
+@NamedQueries({
+        @NamedQuery(name = "Customer.findByID", query = "SELECT C FROM Customer C WHERE C.id =:id"),
+        @NamedQuery(name = "Customer.findAll", query = "SELECT C FROM Customer C")
+})
 public class Customer {
     @Id
     @Column(name = "cust_id")

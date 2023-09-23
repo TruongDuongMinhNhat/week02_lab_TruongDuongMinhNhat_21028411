@@ -1,4 +1,4 @@
-package dev.minhnhat.week02_lab_truongduongminhnhat_21028411.resources;
+package dev.minhnhat.week02_lab_truongduongminhnhat_21028411.backend.resources.impl;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Persistence;

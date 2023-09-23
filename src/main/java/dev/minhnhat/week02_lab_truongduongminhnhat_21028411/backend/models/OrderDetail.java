@@ -1,9 +1,15 @@
-package dev.minhnhat.week02_lab_truongduongminhnhat_21028411.models;
+package dev.minhnhat.week02_lab_truongduongminhnhat_21028411.backend.models;
 
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "order_detail")
+@NamedQueries({
+        @NamedQuery(name = "OrderDetail.findAll", query = "SELECT OD FROM OrderDetail OD"),
+        @NamedQuery(name = "OrderDetail.findByID", query = "SELECT OD FROM OrderDetail OD WHERE OD.orderID =:orderID AND OD.productID =:productID"),
+        @NamedQuery(name = "OrderDetail.findByOrderID", query = "SELECT OD FROM OrderDetail OD WHERE OD.orderID =:orderID"),
+        @NamedQuery(name = "OrderDetail.findByProductID", query = "SELECT OD FROM OrderDetail OD WHERE OD.productID =:productID"),
+})
 public class OrderDetail {
     @Id
     @ManyToOne

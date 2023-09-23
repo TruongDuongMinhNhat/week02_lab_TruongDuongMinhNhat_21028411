@@ -1,9 +1,15 @@
-package dev.minhnhat.week02_lab_truongduongminhnhat_21028411.models;
+package dev.minhnhat.week02_lab_truongduongminhnhat_21028411.backend.models;
 
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "product_image")
+@NamedQueries({
+        @NamedQuery(name = "ProductImage.findByID", query = "SELECT PI FROM ProductImage PI WHERE PI.imageID =:imageID AND PI.productID =:productID"),
+        @NamedQuery(name = "ProductImage.findByProductID", query = "SELECT PI FROM ProductImage PI WHERE PI.productID =:productID"),
+        @NamedQuery(name = "ProductImage.findByImageID", query = "SELECT PI FROM ProductImage PI WHERE PI.imageID =:imageID"),
+        @NamedQuery(name = "ProductImage.findAll", query = "SELECT PI FROM ProductImage PI")
+})
 public class ProductImage {
     @Id
     @ManyToOne

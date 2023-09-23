@@ -1,19 +1,23 @@
-package dev.minhnhat.week02_lab_truongduongminhnhat_21028411.models;
+package dev.minhnhat.week02_lab_truongduongminhnhat_21028411.backend.models;
 
 import jakarta.persistence.*;
-
-import java.sql.Date;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "product_price")
+@NamedQueries({
+        @NamedQuery(name = "ProductPrice.findByProductID", query = "SELECT PP FROM ProductPrice PP WHERE PP.productID =:productID"),
+        @NamedQuery(name = "ProductPrice.findByLocalDateTime", query = "SELECT PP FROM ProductPrice PP WHERE PP.productLocalDateTime =:productLocalDateTime"),
+        @NamedQuery(name = "ProductPrice.findAll", query = "SELECT PP FROM ProductPrice PP")
+})
 public class ProductPrice {
     @Id
     @ManyToOne
     @JoinColumn(name = "product_id")
     private Product productID;
     @Id
-    @Column(name = "product_date_time")
-    private Date productDateTime;
+    @Column(name = "product_LocalDate_time")
+    private LocalDate productLocalDateTime;
     private double price;
     @Column(length = 200)
     private String note;
@@ -21,9 +25,9 @@ public class ProductPrice {
     public ProductPrice() {
     }
 
-    public ProductPrice(Product productID, Date productDateTime, double price, String note) {
+    public ProductPrice(Product productID, LocalDate productLocalDateTime, double price, String note) {
         this.productID = productID;
-        this.productDateTime = productDateTime;
+        this.productLocalDateTime = productLocalDateTime;
         this.price = price;
         this.note = note;
     }
@@ -36,12 +40,12 @@ public class ProductPrice {
         this.productID = productID;
     }
 
-    public Date getProductDateTime() {
-        return productDateTime;
+    public LocalDate getProductLocalDateTime() {
+        return productLocalDateTime;
     }
 
-    public void setProductDateTime(Date productDateTime) {
-        this.productDateTime = productDateTime;
+    public void setProductLocalDateTime(LocalDate productLocalDateTime) {
+        this.productLocalDateTime = productLocalDateTime;
     }
 
     public double getPrice() {
@@ -64,7 +68,7 @@ public class ProductPrice {
     public String toString() {
         return "ProductPrice{" +
                 "productID=" + productID +
-                ", productDateTime=" + productDateTime +
+                ", productLocalDateTime=" + productLocalDateTime +
                 ", price=" + price +
                 ", note='" + note + '\'' +
                 '}';

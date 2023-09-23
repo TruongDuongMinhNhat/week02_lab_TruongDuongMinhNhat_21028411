@@ -6,13 +6,13 @@
              version="3.0">
   <persistence-unit name="week02" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-    <class>dev.minhnhat.week02_lab_truongduongminhnhat_21028411.models.Customer</class>
-    <class>dev.minhnhat.week02_lab_truongduongminhnhat_21028411.models.Employee</class>
-    <class>dev.minhnhat.week02_lab_truongduongminhnhat_21028411.models.Product</class>
-    <class>dev.minhnhat.week02_lab_truongduongminhnhat_21028411.models.Orders</class>
-    <class>dev.minhnhat.week02_lab_truongduongminhnhat_21028411.models.OrderDetail</class>
-    <class>dev.minhnhat.week02_lab_truongduongminhnhat_21028411.models.ProductImage</class>
-    <class>dev.minhnhat.week02_lab_truongduongminhnhat_21028411.models.ProductPrice</class>
+    <class>dev.minhnhat.week02_lab_truongduongminhnhat_21028411.backend.models.Customer</class>
+    <class>dev.minhnhat.week02_lab_truongduongminhnhat_21028411.backend.models.Employee</class>
+    <class>dev.minhnhat.week02_lab_truongduongminhnhat_21028411.backend.models.Product</class>
+    <class>dev.minhnhat.week02_lab_truongduongminhnhat_21028411.backend.models.Orders</class>
+    <class>dev.minhnhat.week02_lab_truongduongminhnhat_21028411.backend.models.OrderDetail</class>
+    <class>dev.minhnhat.week02_lab_truongduongminhnhat_21028411.backend.models.ProductImage</class>
+    <class>dev.minhnhat.week02_lab_truongduongminhnhat_21028411.backend.models.ProductPrice</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="jakarta.persistence.jdbc.driver"

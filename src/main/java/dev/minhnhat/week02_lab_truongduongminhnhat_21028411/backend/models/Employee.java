@@ -1,12 +1,15 @@
-package dev.minhnhat.week02_lab_truongduongminhnhat_21028411.models;
+package dev.minhnhat.week02_lab_truongduongminhnhat_21028411.backend.models;
 
-import dev.minhnhat.week02_lab_truongduongminhnhat_21028411.enums.EmployeeStatus;
+import dev.minhnhat.week02_lab_truongduongminhnhat_21028411.backend.enums.EmployeeStatus;
 import jakarta.persistence.*;
-
-import java.sql.Date;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "employee")
+@NamedQueries({
+    @NamedQuery(name = "Employee.findByID", query = "SELECT E FROM Employee E WHERE E.id =:id"),
+    @NamedQuery(name = "Employee.findAll", query = "SELECT E FROM Employee E")
+})
 public class Employee {
     @Id
     @Column(name = "emp_id")
@@ -14,7 +17,7 @@ public class Employee {
     private long id;
     @Column(name = "full_name", length = 100, nullable = false)
     private String fullName;
-    private Date dob;
+    private LocalDate dob;
     @Column(length = 200)
     private String email;
     @Column(length = 15, nullable = false, unique = true)
@@ -27,7 +30,7 @@ public class Employee {
     public Employee() {
     }
 
-    public Employee(String fullName, Date dob, String email, String phone, String address, EmployeeStatus status) {
+    public Employee(String fullName, LocalDate dob, String email, String phone, String address, EmployeeStatus status) {
         this.fullName = fullName;
         this.dob = dob;
         this.email = email;
@@ -47,11 +50,11 @@ public class Employee {
         this.fullName = fullName;
     }
 
-    public Date getDob() {
+    public LocalDate getDob() {
         return dob;
     }
 
-    public void setDob(Date dob) {
+    public void setDob(LocalDate dob) {
         this.dob = dob;
     }
 

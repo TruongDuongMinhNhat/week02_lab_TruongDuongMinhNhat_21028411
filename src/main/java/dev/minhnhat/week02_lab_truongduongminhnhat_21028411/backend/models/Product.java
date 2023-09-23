@@ -1,10 +1,14 @@
-package dev.minhnhat.week02_lab_truongduongminhnhat_21028411.models;
+package dev.minhnhat.week02_lab_truongduongminhnhat_21028411.backend.models;
 
-import dev.minhnhat.week02_lab_truongduongminhnhat_21028411.enums.ProductStatus;
+import dev.minhnhat.week02_lab_truongduongminhnhat_21028411.backend.enums.ProductStatus;
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "product")
+@NamedQueries({
+        @NamedQuery(name = "Product.findAll", query = "SELECT P FROM Product P"),
+        @NamedQuery(name = "Product.findByID", query = "SELECT P FROM Product P WHERE P.produceID =:productID")
+})
 public class Product {
     @Id
     @Column(name = "product_id")

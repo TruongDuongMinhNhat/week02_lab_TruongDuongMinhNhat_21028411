@@ -1,4 +1,4 @@
-package dev.minhnhat.week02_lab_truongduongminhnhat_21028411.enums;
+package dev.minhnhat.week02_lab_truongduongminhnhat_21028411.backend.enums;
 
 public enum ProductStatus {
     SOLD(1), SOLD_OUT(0), STOP(-1);

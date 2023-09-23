@@ -1,4 +1,4 @@
-package dev.minhnhat.week02_lab_truongduongminhnhat_21028411.enums;
+package dev.minhnhat.week02_lab_truongduongminhnhat_21028411.backend.enums;
 
 public enum EmployeeStatus {
     ACTIVE(1), IN_ACTIVE(0), TERMINATE(-1);
